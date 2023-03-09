@@ -27,7 +27,7 @@
   border: 1px solid hsl(225, 100%, 45%);
   border-radius: 5px;
   color: white;
-  font-family: 'Epilogue';
+  font-family: ' Epilogue' , sans-serif;
   font-size: 14px;
   font-weight: 700;
   height: 40px;
@@ -43,7 +43,7 @@
   border: 1px solid hsl(225, 100%, 45%);
   border-radius: 5px;
   color: grey;
-  font-family: 'Epilogue';
+  font-family: ' Epilogue', sans-serif;
   font-size: 14px;
   font-weight: 700;
   height: 40px;
@@ -54,7 +54,7 @@
   width: 330px;
 }
 
-.email-input, .password-input {
+.email-input , .password-input {
   background: white;
   border: 1px solid hsl(225, 100%, 45%);
   border-color: blue;
