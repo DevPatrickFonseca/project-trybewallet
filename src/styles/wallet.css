@@ -3,8 +3,133 @@
   background: url('../images/login-bg.png'), hsl(158, 61%, 47%);
   background-size: 100% 100%;
   display: flex;
+  flex-direction: column;
   height: 100%;
-  justify-content: center;
   position: absolute;
   width: 100%;
+  z-index: -2;
+}
+
+.wallet-header {
+  background: white;
+  border-radius: 10px;
+  box-shadow: -4px 9px 13px #05123666;
+  display: flex;
+  flex-direction: column;
+  height: 385px;
+  width: 1037px;
+}
+
+.wallet-header-top {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  height: 156px;
+  justify-content: space-around;
+  top: 0.001px;
+  width: 1037px;
+}
+
+.wallet-header-form {
+  align-items: center;
+  background: #e1e5eb7d;
+  display: flex;
+  flex-direction: row;
+  height: 134px;
+  justify-content: center;
+  padding-left: 110px;
+  padding-right: 110px;
+  top: 156px;
+  width: 817px;
+}
+
+.wallet-header-form form {
+  display: flex;
+  flex-wrap: wrap;
+  height: 87px;
+  justify-content: space-around;
+  width: 820px;
+}
+
+input {
+  border: 1px solid hsl(225, 100%, 45%);
+  height: 30px;
+}
+
+.wallet-header-form input {
+  border-radius: 5px;
+  margin: 6px;
+}
+
+.wallet-header-button {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  height: 95px;
+  justify-content: center;
+  width: 1037px;
+}
+
+.wallet-table {
+  background: hsl(225, 100%, 45%);
+  border-radius: 10px;
+  box-shadow: -4px 9px 13px #036b524d;
+  display: flex;
+  flex-direction: row;
+  height: 464px;
+  position: absolute;
+  top: 156px;
+  width: 1154px;
+  z-index: -1;
+}
+
+label {
+  color: hsl(225, 100%, 45%);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.input-desc-despesa {
+  width: 289px;
+}
+
+.input-cate-despesa {
+  width: 155px;
+}
+
+.input-pagamento {
+  width: 228px;
+}
+
+.input-moeda {
+  width: 91px;
+}
+
+button {
+  background: hsl(158, 61%, 47%);
+  border: 1px solid hsl(158, 61%, 47%);
+  border-radius: 5px;
+  box-sizing: border-box;
+  color: white;
+  font-weight: 600;
+  height: 40px;
+  width: 330px;
+}
+
+.wallet-profile {
+  align-items: center;
+  color: hsl(158, 61%, 47%);
+  display: flex;
+  font-size: 13px;
+  font-weight: 600;
+  gap: 5px;
+}
+
+.wallet-coins {
+  align-items: center;
+  color: hsl(225, 100%, 45%);
+  display: flex;
+  font-size: 13px;
+  font-weight: 600;
+  gap: 5px;
 }

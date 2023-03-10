@@ -60,12 +60,14 @@
   border-color: blue;
   border-radius: 5px;
   box-sizing: border-box;
+  color: blue;
   font-size: 14px;
   font-weight: 400;
   height: 40px;
   left: 475px;
   margin: 10px;
   outline: none;
+  padding: 5px;
   top: 360px;
   width: 330px;
 }

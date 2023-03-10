@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import '../styles/wallet.css';
 
 class Table extends Component {
   render() {
     return (
-      <div>Table</div>
+      <div className="wallet-table " />
     );
   }
 }
