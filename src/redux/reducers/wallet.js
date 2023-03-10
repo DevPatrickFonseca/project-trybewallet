@@ -1,5 +1,5 @@
 // Esse reducer será responsável por tratar o todas as informações relacionadas as despesas
-import { SUBMIT_WALLET_INFO } from '../actions/index';
+import { SUBMIT_CURRENCIES_INFO } from '../actions/index';
 
 const INITIAL_STATE = {
   currencies: [], // array de string
@@ -10,7 +10,7 @@ const INITIAL_STATE = {
 
 const wallet = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-  case SUBMIT_WALLET_INFO: {
+  case SUBMIT_CURRENCIES_INFO: {
     return {
       ...state,
       ...action.payload,

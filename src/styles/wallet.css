@@ -61,15 +61,6 @@ input {
   margin: 6px;
 }
 
-.wallet-header-button {
-  align-items: center;
-  display: flex;
-  flex-direction: row;
-  height: 95px;
-  justify-content: center;
-  width: 1037px;
-}
-
 .wallet-table {
   background: hsl(225, 100%, 45%);
   border-radius: 10px;
@@ -89,23 +80,40 @@ label {
   font-weight: 600;
 }
 
-.input-desc-despesa {
+/* Wallet Inputs */
+.description-input {
   width: 289px;
 }
 
-.input-cate-despesa {
+.tag-input {
+  border: 1px solid hsl(225, 100%, 45%);
+  border-radius: 5px;
+  height: 30px;
+  margin: 6px;
   width: 155px;
 }
 
-.input-pagamento {
+.value-input {
+  width: 158px;
+}
+
+.method-input {
+  border: 1px solid hsl(225, 100%, 45%);
+  border-radius: 5px;
+  height: 30px;
+  margin: 6px;
   width: 228px;
 }
 
-.input-moeda {
+.currency-input {
+  border: 1px solid hsl(225, 100%, 45%);
+  border-radius: 5px;
+  height: 30px;
+  margin: 6px;
   width: 91px;
 }
 
-button {
+.button-wallet {
   background: hsl(158, 61%, 47%);
   border: 1px solid hsl(158, 61%, 47%);
   border-radius: 5px;
@@ -113,6 +121,8 @@ button {
   color: white;
   font-weight: 600;
   height: 40px;
+  position: relative;
+  top: 50px;
   width: 330px;
 }
 

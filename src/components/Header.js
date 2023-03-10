@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../styles/wallet.css';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import WalletForm from './WalletForm';
 import logo from '../images/logo-trybe-wallet.png';
 import imgCoin from '../images/wallet-coins.png';
@@ -23,7 +24,7 @@ class Header extends Component {
       <div className="wallet-header">
         <div className="wallet-header-top">
           <div className="logo-trybe-wallet">
-            <img src={ logo } alt="TrybeWallet" />
+            <Link to="/" alt="Login"><img src={ logo } alt="TrybeWallet" /></Link>
           </div>
           <div className="wallet-coins">
             <img src={ imgCoin } alt="TrybeWallet" />
@@ -39,9 +40,6 @@ class Header extends Component {
 
         <WalletForm />
 
-        <div className="wallet-header-button">
-          <button>Adicionar Despesa</button>
-        </div>
       </div>
 
     );
