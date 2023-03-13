@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import '../styles/wallet.css';
 import PropTypes from 'prop-types';
-// import { getCurrencyQuotation } from '../services/awesomeapi';
-// import { submitWalletInfo } from '../redux/actions';
+import { getExpense } from '../redux/actions';
 
 class WalletForm extends Component {
   state = {
@@ -14,10 +13,37 @@ class WalletForm extends Component {
     currency: 'USD',
   };
 
+  addExpenses = (event) => {
+    event.preventDefault();
+
+    const { dispatch, expenses } = this.props;
+
+    const { description, tag, value, method, currency } = this.state;
+
+    const expensesSend = {
+      id: expenses.length,
+      description,
+      tag,
+      value,
+      method,
+      currency,
+    };
+
+    dispatch(getExpense(expensesSend));
+
+    this.setState({
+      description: '',
+      tag: 'Alimentação',
+      value: '',
+      method: 'Dinheiro',
+      currency: 'USD',
+    });
+  };
+
   handleChange = ({ target: { name, value } }) => {
     this.setState({
       [name]: value,
-    }, this.emailIsValid);
+    });
   };
 
   render() {
@@ -39,6 +65,7 @@ class WalletForm extends Component {
           <label htmlFor="description">
             Descrição da despesa
             <input
+              id="description"
               name="description"
               value={ description }
               type="text"
@@ -51,11 +78,13 @@ class WalletForm extends Component {
           <label htmlFor="tag">
             Categoria da despesa
             <select
+              id="tag"
               name="tag"
               value={ tag }
               type="text"
               className="tag-input"
               data-testid="tag-input"
+              onChange={ this.handleChange }
             >
               <option value="Alimentação">Alimentação</option>
               <option value="Lazer">Lazer</option>
@@ -68,22 +97,26 @@ class WalletForm extends Component {
           <label htmlFor="value">
             Valor
             <input
+              id="value"
               name="value"
               value={ value }
               type="number"
               className="value-input"
               data-testid="value-input"
+              onChange={ this.handleChange }
             />
           </label>
 
           <label htmlFor="method">
             Metodo de pagamento
             <select
+              id="method"
               name="method"
               value={ method }
               type="text"
               className="method-input"
               data-testid="method-input"
+              onChange={ this.handleChange }
             >
               <option value="Dinheiro">Dinheiro</option>
               <option value="Cartão de crédito">Cartão de crédito</option>
@@ -94,11 +127,13 @@ class WalletForm extends Component {
           <label htmlFor="currency">
             Moeda
             <select
+              id="currency"
               name="currency"
               value={ currency }
               type="select"
               className="currency-input"
               data-testid="currency-input"
+              onChange={ this.handleChange }
             >
               {currencies.map((actualCurrency) => (
                 <option
@@ -113,7 +148,7 @@ class WalletForm extends Component {
 
           <button
             type="submit"
-            onClick={ () => {} }
+            onClick={ this.addExpenses }
             className="button-wallet"
           >
             Adicionar Despesa
@@ -128,9 +163,19 @@ class WalletForm extends Component {
 
 const mapStateToProps = (state) => ({
   currencies: state.wallet.currencies,
+  expenses: state.wallet.expenses,
 });
 
 WalletForm.propTypes = {
+  dispatch: PropTypes.func.isRequired,
+  expenses: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number,
+    description: PropTypes.string,
+    tag: PropTypes.string,
+    value: PropTypes.string,
+    method: PropTypes.string,
+    currency: PropTypes.string,
+  })).isRequired,
   currencies: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
