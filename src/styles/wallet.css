@@ -65,13 +65,49 @@ input {
   background: hsl(225, 100%, 45%);
   border-radius: 10px;
   box-shadow: -4px 9px 13px #036b524d;
-  display: flex;
   flex-direction: row;
+  font-size: 12px;
   height: 464px;
+  justify-content: center;
+  padding-left: 15px;
+  padding-right: 15px;
   position: absolute;
   top: 156px;
-  width: 1154px;
+  width: 1124px;
   z-index: -1;
+}
+
+table {
+  position: relative;
+  top: 250px;
+  width: 1124px;
+}
+
+tr {
+  color: white;
+}
+
+td {
+  padding-top: 10px;
+  text-align: center;
+}
+
+.button-edit {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0 15px;
+}
+
+.button-delete {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0 15px;
+}
+
+tbody {
+  color: hsl(158, 61%, 47%);
 }
 
 label {
