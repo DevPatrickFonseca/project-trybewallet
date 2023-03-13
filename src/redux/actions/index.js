@@ -4,8 +4,8 @@ import { getCurrencyQuotation } from '../../services/awesomeapi';
 export const SUBMIT_USER_INFO = 'SUBMIT_USER_INFO';
 export const SUBMIT_CURRENCIES_INFO = 'SUBMIT_CURRENCIES_INFO';
 
-// Requisito 04 - Fazendo
 export const ADD_EXPENSE_INFO = 'ADD_EXPENSE_INFO';
+export const REMOVE_EXPENSE_INFO = 'REMOVE_EXPENSE_INFO';
 
 // Action Creators
 export const submitUserInfo = (payload) => ({
@@ -27,7 +27,6 @@ export const getCurrencies = () => async (dispatch) => {
   dispatch(submitCurrenciesInfo(currencies));
 };
 
-// Requisito 04 - Fazendo
 export const addExpenseInfo = (expense) => ({
   type: ADD_EXPENSE_INFO,
   payload: { expense },
@@ -38,3 +37,8 @@ export const getExpense = (expense) => async (dispatch) => {
 
   dispatch(addExpenseInfo({ ...expense, exchangeRates }));
 };
+
+export const removeExpenseInfo = (expense) => ({
+  type: REMOVE_EXPENSE_INFO,
+  payload: { expense },
+});

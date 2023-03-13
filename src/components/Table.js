@@ -4,13 +4,21 @@ import '../styles/wallet.css';
 import { connect } from 'react-redux';
 import imgDelete from '../images/wallet-delete.png';
 import imgEdit from '../images/wallet-edit.png';
+import { removeExpenseInfo } from '../redux/actions/index';
 
 class Table extends Component {
+  removeExpenseId = (expense) => {
+    const { dispatch } = this.props;
+    const expenseId = expense.target.id;
+
+    dispatch(removeExpenseInfo(expenseId));
+  };
+
   render() {
     const { expenses } = this.props;
 
     return (
-      <div className="wallet-table ">
+      <div className="wallet-table">
         <table>
           <thead>
             <tr>
@@ -52,9 +60,12 @@ class Table extends Component {
                     {' '}
                   </span>
                   <button
-                    name="button-delete"
-                    type="submit"
-                    className="button-delete"
+                    id={ expense.id }
+                    name="delete-btn"
+                    type="button"
+                    data-testid="delete-btn"
+                    className="delete-btn"
+                    onClick={ this.removeExpenseId }
                   >
                     <img src={ imgDelete } alt="Remover" />
                   </button>
@@ -73,6 +84,7 @@ const mapStateToProps = (state) => ({
 });
 
 Table.propTypes = {
+  dispatch: PropTypes.func.isRequired,
   expenses: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number,
     description: PropTypes.string,
