@@ -92,7 +92,9 @@ class WalletForm extends Component {
 
     dispatch(editExpense(expenseEdit));
 
-    this.resetState();
+    setTimeout(() => {
+      this.resetState();
+    }, '10');
   };
 
   handleChange = ({ target: { name, value } }) => {

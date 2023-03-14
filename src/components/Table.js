@@ -58,7 +58,7 @@ class Table extends Component {
                     name="edit-btn"
                     type="button"
                     data-testid="edit-btn"
-                    className="edit-btnt"
+                    className="edit-btn"
                     onClick={ () => this.editExpenseId(expense.id) }
                   >
                     <img src={ imgEdit } alt="Editar despesa" />
