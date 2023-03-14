@@ -28,9 +28,7 @@ const wallet = (state = INITIAL_STATE, action) => {
       ],
     };
 
-  case REMOVE_EXPENSE_INFO: {
-    console.log(state.expenses
-      .filter((expense) => expense.id !== Number(action.payload.expense)));
+  case REMOVE_EXPENSE_INFO:
     return {
       ...state,
       expenses: (
@@ -38,7 +36,6 @@ const wallet = (state = INITIAL_STATE, action) => {
           .filter((expense) => expense.id !== Number(action.payload.expense))
       ),
     };
-  }
 
   default:
     return state;
