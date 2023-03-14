@@ -4,13 +4,19 @@ import '../styles/wallet.css';
 import { connect } from 'react-redux';
 import imgDelete from '../images/wallet-delete.png';
 import imgEdit from '../images/wallet-edit.png';
-import { removeExpenseInfo } from '../redux/actions/index';
+import { removeExpenseInfo, editExpenseStart } from '../redux/actions/index';
 
 class Table extends Component {
   removeExpenseId = (expenseId) => {
     const { dispatch } = this.props;
 
     dispatch(removeExpenseInfo(expenseId));
+  };
+
+  editExpenseId = (expenseId) => {
+    const { dispatch } = this.props;
+
+    dispatch(editExpenseStart(expenseId));
   };
 
   render() {
@@ -48,11 +54,14 @@ class Table extends Component {
                 <td>Real</td>
                 <td>
                   <button
-                    name="button-edit"
-                    type="submit"
-                    className="button-edit"
+                    id={ expense.id }
+                    name="edit-btn"
+                    type="button"
+                    data-testid="edit-btn"
+                    className="edit-btnt"
+                    onClick={ () => this.editExpenseId(expense.id) }
                   >
-                    <img src={ imgEdit } alt="Editar" />
+                    <img src={ imgEdit } alt="Editar despesa" />
 
                   </button>
                   <span>

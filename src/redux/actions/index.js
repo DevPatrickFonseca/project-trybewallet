@@ -6,6 +6,8 @@ export const SUBMIT_CURRENCIES_INFO = 'SUBMIT_CURRENCIES_INFO';
 
 export const ADD_EXPENSE_INFO = 'ADD_EXPENSE_INFO';
 export const REMOVE_EXPENSE_INFO = 'REMOVE_EXPENSE_INFO';
+export const EDIT_EXPENSE = 'EDIT_EXPENSE';
+export const EDIT_EXPENSE_START = 'EDIT_EXPENSE_START';
 
 // Action Creators
 export const submitUserInfo = (payload) => ({
@@ -41,4 +43,14 @@ export const getExpense = (expense) => async (dispatch) => {
 export const removeExpenseInfo = (expense) => ({
   type: REMOVE_EXPENSE_INFO,
   payload: { expense },
+});
+
+export const editExpense = (expense) => ({
+  type: EDIT_EXPENSE,
+  payload: { expense, editor: false },
+});
+
+export const editExpenseStart = (idToEdit) => ({
+  type: EDIT_EXPENSE_START,
+  payload: { idToEdit, editor: true },
 });
