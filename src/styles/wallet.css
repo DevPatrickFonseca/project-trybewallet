@@ -77,19 +77,36 @@ input {
   z-index: -1;
 }
 
-table {
+.wallet-table-overflow::-webkit-scrollbar {
+  background: hsl(158, 61%, 47%);
+  border-radius: 5px;
+  height: 0;
+  width: 5px;
+}
+
+.wallet-table-overflow {
+  height: 210px;
+  overflow-y: scroll;
   position: relative;
   top: 250px;
+}
+
+table {
+  position: relative;
   width: 1124px;
 }
 
 th {
   color: white;
+  text-align: center;
 }
 
 td {
-  padding-top: 10px;
   text-align: center;
+}
+
+tr {
+  height: 25px;
 }
 
 .edit-btn {

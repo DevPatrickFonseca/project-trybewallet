@@ -23,7 +23,7 @@ class Table extends Component {
     const { expenses } = this.props;
 
     return (
-      <div className="wallet-table">
+      <div className="wallet-table-overflow">
         <table>
           <thead>
             <tr>
