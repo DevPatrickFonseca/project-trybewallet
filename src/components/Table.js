@@ -7,9 +7,8 @@ import imgEdit from '../images/wallet-edit.png';
 import { removeExpenseInfo } from '../redux/actions/index';
 
 class Table extends Component {
-  removeExpenseId = (expense) => {
+  removeExpenseId = (expenseId) => {
     const { dispatch } = this.props;
-    const expenseId = expense.target.id;
 
     dispatch(removeExpenseInfo(expenseId));
   };
@@ -61,11 +60,10 @@ class Table extends Component {
                   </span>
                   <button
                     id={ expense.id }
-                    name="delete-btn"
                     type="button"
                     data-testid="delete-btn"
                     className="delete-btn"
-                    onClick={ this.removeExpenseId }
+                    onClick={ () => this.removeExpenseId(expense.id) }
                   >
                     <img src={ imgDelete } alt="Remover" />
                   </button>

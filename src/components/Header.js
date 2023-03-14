@@ -21,8 +21,7 @@ class Header extends Component {
     const sumExpenses = expenses
       .reduce((acc, actualValueExpense) => {
         acc += (Number(actualValueExpense.value)
-          .toFixed(2)
-          * actualValueExpense.exchangeRates[actualValueExpense.currency].ask);
+          * Number(actualValueExpense.exchangeRates[actualValueExpense.currency].ask));
 
         return acc;
       }, 0);
