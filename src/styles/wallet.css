@@ -51,9 +51,14 @@
   width: 820px;
 }
 
+button {
+  cursor: pointer;
+}
+
 input {
   border: 1px solid hsl(225, 100%, 45%);
   height: 30px;
+  padding: 0 5px;
 }
 
 .wallet-header-form input {
