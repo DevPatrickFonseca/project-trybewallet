@@ -36,7 +36,12 @@ class Login extends React.Component {
     return (
       <div className="container-login">
         <div className="login-page">
-          <img src={ logo } alt="TrybeWallet" className="logo-trybe-wallet" />
+          <img
+            src={ logo }
+            name="TrybeWallet"
+            alt="TrybeWallet"
+            className="logo-trybe-wallet"
+          />
           <p className="trybe-wallet" alt="TrybeWallet" />
 
           <div>
